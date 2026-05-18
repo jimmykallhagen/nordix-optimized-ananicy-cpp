@@ -3,6 +3,8 @@
 ## Goal
 Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that wakes periodically to scan and re-nice processes. Since it resides in L1 cache while sleeping, every byte of cache it occupies evicts data from performance-critical applications (games, compilation, rendering). The goal is to make it as small as possible to reduce cache pollution.
 
+---
+
 ## Optimization Strategy
 - **`-Os`** instead of `-O3`/`-O2` — optimize for size, not speed (daemon is IO-bound, sleeps 99% of the time)
 - **`-march=native -mtune=native`** — target the build machine's CPU
@@ -16,10 +18,14 @@ Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that w
 - **`-fno-plt`** — faster internal function calls, smaller PLT
 - **`--strip-all --build-id=none`** — remove all symbols and metadata
 
+---
+
 ## Build Fixes Required
 The project has issues with newer compilers (missing POSIX headers):
 - Added `-include unistd.h` and `-D_GNU_SOURCE` for missing `getpid()` and `mkostemp()` declarations
 - CMake's `StandardProjectSettings` and `configure_linker` override user flags, so flags must be forced via `CMAKE_C_FLAGS`/`CMAKE_CXX_FLAGS` set at the end of `CMakeLists.txt`
+
+---
 
 ## Results
 
@@ -29,13 +35,19 @@ The project has issues with newer compilers (missing POSIX headers):
 | **System installed** | 510 KB | 517 KB | ~6,048 | 64 bytes |
 | **Optimized build** | **400 KB** | **408 KB** | **~4,400** | **16 bytes** |
 
-### Improvement over AUR/GIT
+---
+
+## Improvement over AUR/GIT
 - **-34%** smaller .text section
 - **~5,200 fewer cache lines** evicted per wake cycle
 
-### Improvement over system installed
+---
+
+## Improvement over system installed
 - **-22%** smaller .text section
 - **~1,600 fewer cache lines** evicted per wake cycle
+
+---
 
 ## Practical Impact
 Each time ananicy-cpp wakes (every few seconds by default), it pulls its code into L1 instruction cache. With the optimized build:
@@ -43,8 +55,10 @@ Each time ananicy-cpp wakes (every few seconds by default), it pulls its code in
 - **Lower latency** when returning to the foreground application
 - **Reduced micro-stutter** in latency-sensitive workloads like gaming
 
+---
+
 ## Flags Used
-```bash
+```Fish
 # Common flags
 -include unistd.h -D_GNU_SOURCE
 -march=native -mtune=native
@@ -56,8 +70,10 @@ Each time ananicy-cpp wakes (every few seconds by default), it pulls its code in
 -fstack-protector -D_FORTIFY_SOURCE=1
 -fdata-sections -ffunction-sections
 -flto=full
+```
 
 # Linker flags
+```Fish
 -flto=full -fuse-ld=lld
 -Wl,-O3,--relax,--gc-sections,--strip-all
 -Wl,--lto-O3
@@ -65,3 +81,4 @@ Each time ananicy-cpp wakes (every few seconds by default), it pulls its code in
 -Wl,--icf=all
 -Wl,-z,now -Wl,-z,relro
 -Wl,--build-id=none
+```
