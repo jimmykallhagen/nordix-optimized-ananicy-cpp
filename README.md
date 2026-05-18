@@ -1,5 +1,7 @@
 # Nordix - ananicy-cpp Optimized Build
 
+**42/28% more Optimized**
+
 ## Goal
 Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that wakes periodically to scan and re-nice processes. Since it resides in L1 cache while sleeping, every byte of cache it occupies evicts data from performance-critical applications (games, compilation, rendering). The goal is to make it as small as possible to reduce cache pollution.
 
@@ -29,24 +31,25 @@ The project has issues with newer compilers (missing POSIX headers):
 
 ## Results
 
-| Version | .text (code) | Total binary | Cache lines | Alignment |
-|---------|-------------|--------------|-------------|-----------|
-| **AUR/GIT (standard)** | 603 KB | 610 KB | ~9,648 | 64 bytes |
-| **System installed** | 510 KB | 517 KB | ~6,048 | 64 bytes |
-| **Optimized build** | **400 KB** | **408 KB** | **~4,400** | **16 bytes** |
+| Version | .text (code) | Cache lines | Alignment |
+|---------|-------------|-------------|-----------|
+| **AUR/GIT (standard)** | 467 KB | ~7,472 | 64 bytes |
+| **Arch repo (previous installed)** | 378 KB | ~6,048 | 64 bytes |
+| **Optimized build (running)** | **273 KB** | **~4,378** | **16 bytes** |
 
 ---
 
 ## Improvement over AUR/GIT
-- **-34%** smaller .text section
-- **~5,200 fewer cache lines** evicted per wake cycle
+- **-42%** smaller .text section (467 KB → 273 KB)
+- **~3,094 fewer cache lines** evicted per wake cycle
 
 ---
 
-## Improvement over system installed
-- **-22%** smaller .text section
-- **~1,600 fewer cache lines** evicted per wake cycle
+## Improvement over Arch repo (previous system installed)
+- **-28%** smaller .text section (378 KB → 273 KB)
+- **~1,670 fewer cache lines** evicted per wake cycle
 
+ 
 ---
 
 ## Practical Impact
