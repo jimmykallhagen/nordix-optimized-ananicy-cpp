@@ -3,7 +3,6 @@
 ## My vision of an optimized system is built on this.
 
  > **don't put trash in the CPU memory pipeline**
- </br>
  > _jimmy Källhagen_
 
 ---
