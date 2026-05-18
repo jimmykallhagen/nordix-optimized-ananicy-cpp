@@ -12,7 +12,13 @@ If you think that a system that only uses 4GB of RAM is more optimized than a sy
 
 If we take a closer look at how the large extreme systems are run (servers), then NVME/HHD/SSD is only storage space and RAM is workspace, this is key to building the fastest system on the planet without a doubt
 
-**42/28% more Optimized**
+CPU cache is much faster than RAM, so getting all standard processes as small as possible here means that all other processes will run much faster.
+
+And that's what this optimization is all about
+
+---
+
+**28%/42% more Optimized**
 
 ## Goal
 Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that wakes periodically to scan and re-nice processes. Since it resides in cache while sleeping, every byte of cache it occupies evicts data from performance-critical applications (games, compilation, rendering). The goal is to make it as small as possible to reduce cache pollution.
