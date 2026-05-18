@@ -5,6 +5,7 @@
  > **don't put trash in the CPU memory pipeline**
  </br>
  > _jimmy Källhagen_
+
 ---
 
 # STATEMENT
