@@ -71,7 +71,7 @@ The project has issues with newer compilers (missing POSIX headers):
 ---
 
 ## Practical Impact
-Each time ananicy-cpp wakes (every few seconds by default), it pulls its code into L1 instruction cache. With the optimized build:
+Each time ananicy-cpp wakes (every few seconds by default), it pulls its code into L1/L2/L3 instruction cache. With the optimized build:
 - **Less cache eviction** of the currently running heavy process
 - **Lower latency** when returning to the foreground application
 - **Reduced micro-stutter** in latency-sensitive workloads like gaming
