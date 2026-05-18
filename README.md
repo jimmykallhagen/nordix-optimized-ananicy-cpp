@@ -1,9 +1,21 @@
 # Nordix - ananicy-cpp Optimized Build
 
+## My vision of an optimized system is built on this.
+
+ > **don't put trash in the CPU memory pipeline**
+ <>/br>
+ > _jimmy Källhagen_
+---
+
+# STATEMENT
+If you think that a system that only uses 4GB of RAM is more optimized than a system that uses 20GB, you are wrong, but there is an aspect to this, an inefficient system can be noted by an abnormally high amount of RAM usage, think Microsoft, this can be directly compared to a Linux system and here this rule does not apply since Windows is an old legacy system that is not efficient. Instead, if we take an efficient system, you will always get a faster computer the more efficiently you can use RAM, that is why ZFS is such a killer in terms of performance, it is truly a devops dream.
+
+If we take a closer look at how the large extreme systems are run (servers), then NVME/HHD/SSD is only storage space and RAM is workspace, this is key to building the fastest system on the planet without a doubt
+
 **42/28% more Optimized**
 
 ## Goal
-Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that wakes periodically to scan and re-nice processes. Since it resides in L1 cache while sleeping, every byte of cache it occupies evicts data from performance-critical applications (games, compilation, rendering). The goal is to make it as small as possible to reduce cache pollution.
+Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that wakes periodically to scan and re-nice processes. Since it resides in cache while sleeping, every byte of cache it occupies evicts data from performance-critical applications (games, compilation, rendering). The goal is to make it as small as possible to reduce cache pollution.
 
 ---
 
