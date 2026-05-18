@@ -45,7 +45,7 @@ The project has issues with newer compilers (missing POSIX headers):
 
 ---
 
-## Improvement over Arch repo (previous system installed)
+## Improvement over Arch repo
 - **-28%** smaller .text section (378 KB → 273 KB)
 - **~1,670 fewer cache lines** evicted per wake cycle
 
