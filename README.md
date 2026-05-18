@@ -1,4 +1,4 @@
-# ananicy-cpp Optimized Build
+# Nordix - ananicy-cpp Optimized Build
 
 ## Goal
 Minimize the cache footprint of `ananicy-cpp`, a process scheduler daemon that wakes periodically to scan and re-nice processes. Since it resides in L1 cache while sleeping, every byte of cache it occupies evicts data from performance-critical applications (games, compilation, rendering). The goal is to make it as small as possible to reduce cache pollution.
