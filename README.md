@@ -7,7 +7,7 @@
 ---
 
 # STATEMENT
-If you think that a system that only uses 4GB of RAM is more optimized than a system that uses 20GB, you are wrong, but there is an aspect to this, an inefficient system can be noted by an abnormally high amount of RAM usage, think Microsoft, this can be directly compared to a Linux system and here this rule does not apply since Windows is an old legacy system that is not efficient. Instead, if we take an efficient system, you will always get a faster computer the more efficiently you can use RAM, that is why ZFS is such a killer in terms of performance, it is truly a devops dream.
+If you think that a system that only uses 4GB of RAM is more optimized than a system that uses 20GB, you are wrong, but there is an aspect to this, an inefficient system can be noted by an abnormally high amount of RAM usage, think Microsoft, this can be directly compared to a Linux system and here this rule does not apply since Windows is an old legacy system that is not efficient. Instead, if we take an efficient system, you will always get a faster computer the more efficiently you can use RAM and cache
 
 If we take a closer look at how the large extreme systems are run (servers), then NVME/HHD/SSD is only storage space and RAM is workspace, this is key to building the fastest system on the planet without a doubt
 
