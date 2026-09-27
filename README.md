@@ -7,13 +7,15 @@
 ---
 
 # STATEMENT
-If you think that a system that only uses 4GB of RAM is more optimized than a system that uses 20GB, you are wrong, but there is an aspect to this, an inefficient system can be noted by an abnormally high amount of RAM usage, think Microsoft, this can be directly compared to a Linux system and here this rule does not apply since Windows is an old legacy system that is not efficient. Instead, if we take an efficient system, you will always get a faster computer the more efficiently you can use RAM and cache
+If you think that a system that only uses 4GB of RAM is more optimized than a system that uses 20GB, you are wrong, but there is an aspect to this, an inefficient system can be noted by an abnormally high amount of RAM usage, think Microsoft, since Windows comes with bloat, old kernel architecture and tons of telemetry, the higher ram usage cant count as something good.
 
-If we take a closer look at how the large extreme systems are run (servers), then NVME/HHD/SSD is only storage space and RAM is workspace, this is key to building the fastest system on the planet without a doubt
+Instead, if we take an efficient system, you will always get a faster computer the more efficiently you can use RAM and cache
 
-CPU cache is much faster than RAM, so getting all standard processes as small as possible here means that all other processes will run much faster.
+If we take a closer look at how the large extreme systems running (servers), then NVME/HHD/SSD is only storage space and RAM is workspace, this is key to building the fastest system on the planet without a doubt.
 
-And that's what this optimization is all about
+CPU cache is much faster than RAM, so getting all standard processes as small as possible here means that all other more demanding processes will run much faster.
+
+And that's what this optimization is all about, not as a huge optimization but rather one part of of a well designed operating system, with efficiently as goal.
 
 ---
 
